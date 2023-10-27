@@ -168,3 +168,7 @@ from route.vote_close import vote_close
 from route.vote_end import vote_end
 from route.vote_list import vote_list
 from route.vote_select import vote_select
+
+from route.main_board_views import main_board_views
+from route.view_board import view_board
+from route.write_board import write_board

@@ -11,6 +11,8 @@ if platform.system() == 'Linux':
     for for_a in os.listdir(os.path.join("route_go", "bin")):
         os.system('chmod +x ./route_go/bin/' + for_a)
 
+# from bbs_route import view_board, write_board, main_board_views
+
 # Init-Version
 with open('version.json', encoding = 'utf8') as file_data:
     version_list = json.loads(file_data.read())
@@ -524,19 +526,49 @@ app.route('/vote/list/close/<int:num>', defaults = { 'list_type' : 'close' })(vo
 app.route('/vote/add', methods = ['POST', 'GET'])(vote_add)
 
 # Func-bbs
-app.route('/bbs/main')(bbs_main)
-app.route('/bbs/make', methods = ['POST', 'GET'])(bbs_make)
-# app.route('/bbs/main/set')
-app.route('/bbs/w/<int:bbs_num>')(bbs_w)
-app.route('/bbs/set/<int:bbs_num>', methods = ['POST', 'GET'])(bbs_w_set)
-app.route('/bbs/edit/<int:bbs_num>', methods = ['POST', 'GET'])(bbs_w_edit)
-app.route('/bbs/w/<int:bbs_num>/<int:post_num>', methods = ['POST', 'GET'])(bbs_w_post)
-app.route('/bbs/raw/<int:bbs_num>/<int:post_num>')(view_raw_2)
-app.route('/bbs/tool/<int:bbs_num>/<int:post_num>')(bbs_w_tool)
-app.route('/bbs/edit/<int:bbs_num>/<int:post_num>', methods = ['POST', 'GET'])(bbs_w_edit)
-app.route('/bbs/tool/<int:bbs_num>/<int:post_num>/<comment_num>')(bbs_w_comment_tool)
-app.route('/bbs/raw/<int:bbs_num>/<int:post_num>/<comment_num>')(view_raw_2)
-app.route('/bbs/edit/<int:bbs_num>/<int:post_num>/<comment_num>', methods = ['POST', 'GET'])(bbs_w_edit)
+# app.route('/bbs/main')(bbs_main)
+# app.route('/bbs/make', methods = ['POST', 'GET'])(bbs_make)
+# # app.route('/bbs/main/set')
+# app.route('/bbs/w/<int:bbs_num>')(bbs_w)
+# app.route('/bbs/set/<int:bbs_num>', methods = ['POST', 'GET'])(bbs_w_set)
+# app.route('/bbs/edit/<int:bbs_num>', methods = ['POST', 'GET'])(bbs_w_edit)
+# app.route('/bbs/w/<int:bbs_num>/<int:post_num>', methods = ['POST', 'GET'])(bbs_w_post)
+# app.route('/bbs/raw/<int:bbs_num>/<int:post_num>')(view_raw_2)
+# app.route('/bbs/tool/<int:bbs_num>/<int:post_num>')(bbs_w_tool)
+# app.route('/bbs/edit/<int:bbs_num>/<int:post_num>', methods = ['POST', 'GET'])(bbs_w_edit)
+# app.route('/bbs/tool/<int:bbs_num>/<int:post_num>/<comment_num>')(bbs_w_comment_tool)
+# app.route('/bbs/raw/<int:bbs_num>/<int:post_num>/<comment_num>')(view_raw_2)
+# app.route('/bbs/edit/<int:bbs_num>/<int:post_num>/<comment_num>', methods = ['POST', 'GET'])(bbs_w_edit)
+
+# 게시판
+
+@app.route('/b/<everything:name>/<int:post_number>')
+@app.route('/b/<everything:name>')
+def view_board_2(name = 'main', post_number = None):
+    with get_db_connect() as conn:
+        curs = conn.cursor()
+        return view_board(conn, name, post_number)
+
+@app.route('/b/<everything:name>/write', methods = ['POST', 'GET'])
+def write_board_2(name = 'main'):
+    with get_db_connect() as conn:
+        curs = conn.cursor()
+        return write_board(conn, name)
+
+# 미완성
+# @app.route('/b/<everything:name>/<int:post_number>/edit', methods = ['POST', 'GET'])
+# def edit_board_2(name = 'main', post_number = 0):
+#     return edit_board(conn, name, post_number)
+
+# @app.route('/b/<everything:name>/<int:post_number>/delete', methods = ['POST', 'GET'])
+# def delete_board_2(name = 'main', post_number = 0):
+#     return edit_board(conn, name, post_number)
+
+@app.route('/board_views/<everything:name>')
+def main_board_views_2(name = None):
+    with get_db_connect() as conn:
+        curs = conn.cursor()
+        return main_board_views(conn, name)
 
 # Func-api
 app.route('/api/w/<everything:name>/doc_tool/<tool>/doc_rev/<int(signed = True):rev>')(api_w)
