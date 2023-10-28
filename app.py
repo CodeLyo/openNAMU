@@ -571,14 +571,15 @@ def main_board_views_2(name = None):
         return main_board_views(conn, name)
 
 # Func-api
-app.route('/api/w/<everything:name>/doc_tool/<tool>/doc_rev/<int(signed = True):rev>')(api_w)
-app.route('/api/w/<everything:name>/doc_tool/<tool>', methods = ['POST', 'GET'])(api_w)
+# 폐지 예정
+app.route('/api/w_rev/<int(signed = True):rev>/<tool>/<everything:name>', methods = ['GET', 'POST'])(api_w)
+app.route('/api/w_tool/<tool>/<everything:name>', methods = ['GET', 'POST'])(api_w)
 app.route('/api/w/<everything:name>', methods = ['GET', 'POST'])(api_w)
 
-app.route('/api/render_tool/<tool>/<everything:name>', methods = ['POST'])(api_w_render)
-app.route('/api/render_tool/<tool>', methods = ['POST'])(api_w_render)
-app.route('/api/render/<everything:name>', methods = ['POST'])(api_w_render)
-app.route('/api/render', methods = ['POST'])(api_w_render)
+# app.route('/api/render_tool/<tool>/<everything:name>', methods = ['POST'])(api_w_render)
+# app.route('/api/render_tool/<tool>', methods = ['POST'])(api_w_render)
+# app.route('/api/render/<everything:name>', methods = ['POST'])(api_w_render)
+# app.route('/api/render', methods = ['POST'])(api_w_render)
 
 app.route('/api/raw_exist/<everything:name>', defaults = { 'exist_check' : 'on' })(api_w_raw)
 app.route('/api/raw_rev/<int(signed = True):rev>/<everything:name>')(api_w_raw)
