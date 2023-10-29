@@ -27,7 +27,7 @@ def write_board(conn, name):
                             </div>
                         </div>'''
         
-        div = '''대충 작성중인 위지워그입니다.
+        div = '''
         <form method="POST">
             <textarea name="article-title" class="article-form-control" placeholder="제목 입력" style=" height: 34px; "></textarea>
             <textarea name="article-contents" id="article-editor" class="article-form-control" placeholder="내용 입력"></textarea>
@@ -126,13 +126,13 @@ def write_board(conn, name):
         articleID = articleID[0][0] if articleID else '0'
         articleID = int(articleID) + int(1)
 
-        print(articleID)
+        # print(articleID)
 
-        print('게시판 : ' + name)
-        print('글 제목 : ' + flask.request.form.get('article-title'))
-        print('글 내용 : ' + flask.request.form.get('article-contents'))
-        print('게시 시간 : ' + today)
-        print('글쓴이 : ' + ip)
+        # print('게시판 : ' + name)
+        # print('글 제목 : ' + flask.request.form.get('article-title'))
+        # print('글 내용 : ' + flask.request.form.get('article-contents'))
+        # print('게시 시간 : ' + today)
+        # print('글쓴이 : ' + ip)
 
 
         curs.execute(db_change(

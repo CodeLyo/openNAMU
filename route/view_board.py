@@ -28,14 +28,19 @@ def view_board(conn, name, post_number):
     
 
     if board_ok == []:
-        div = '''<div>없는 게시판 입니다.</div>'''
+        div = '''
+        <div>
+            <strong>없는 게시판 입니다.</strong><br><a href=/b/main>메인 화면으로 돌아가기</a>
+        </div>
+        
+        '''
     else:
         if name == 'main':
             # 메인 화면 html 설정
-            div = '''<div>메인 접속</div>'''
+            div = ''''''
         else:
             # 메인 이외의 화면 html 설정
-            div = '''<div>메인 이외 접속</div>'''
+            div = ''''''
 
             page_num = int(number_check(flask.request.args.get('page_num', '1')))
             sql_num = (page_num * 50 - 50) if page_num * 50 > 0 else 0
@@ -119,7 +124,7 @@ def view_board(conn, name, post_number):
 
             if article_ok == []:
                 # 존재하지않는 게시글 접속 시
-                div = '''<div>없는 게시글 입니다.</div>'''
+                div = '''<div><strong>없는 게시글 입니다.</strong></div>'''
             else:
                 # 존재하는 게시글 접속시
                 curs.execute(db_change("select articleContent from article where board = ? AND articleID = ? "), [name, num])
@@ -205,9 +210,3 @@ def view_board(conn, name, post_number):
         imp = [board_name, wiki_set(), wiki_custom(), wiki_css([0, 0])],
         data = div
     ))
-
-
-#return easy_minify(flask.render_template('./board_views/index.html skin_check'(),
-#        imp = [name, wiki_set(), wiki_custom()],
-#        data = div,
-#    ))
