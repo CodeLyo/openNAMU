@@ -100,8 +100,7 @@ def view_board(conn, name, post_number):
                             <div class="board-bottom" style="display: flex;">
                                 <span class="article-author">
                                     <span class="article-info" style="display: flex;">
-                                        ''' + data[4] + \
-                                        + checkmark + '''
+                                        ''' + data[4] + checkmark + '''
                                     </span>
                                 </span>
                                 <span class="article-time">
@@ -188,8 +187,7 @@ def view_board(conn, name, post_number):
                             <div class="board-bottom" style="display: flex;">
                                 <span class="article-author">
                                     <span class="article-info" style="display: flex;">
-                                        ''' + data[4] + \
-                                        checkmark + '''
+                                        ''' + data[4] + checkmark + '''
                                     </span>
                                 </span>
                                 <span class="article-time">
