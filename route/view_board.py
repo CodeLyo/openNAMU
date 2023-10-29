@@ -62,6 +62,16 @@ def view_board(conn, name, post_number):
                 </div>''' + board_top
 
             for data in data_list:
+                curs.execute(db_change("select data from user_set where id = ? and name = 'acl'"), (articleUser,))
+                usermark = curs.fetchall()
+                if usermark:
+                    checkmark = '''
+                        <span class="info-badge" name="checkmark-circle">
+                            <img src="/board_views/img/checkmark.png" style="width: 13px; padding-bottom: 1px;">
+                        </span>
+                    '''
+                else:
+                    checkmark = ''
                 div += '''
                     <a class="board column" href="/b/'''+ data[6] +'''/'''+ data[0] +'''">
                         <div class="board-inner">
@@ -73,7 +83,8 @@ def view_board(conn, name, post_number):
                                     <span class="badges" style="padding: 0.2rem 0.5rem; font-size: .85rem; overflow: visible; background-color: gray; color: white;">카테고리</span>
                                     <span class="doc_title">
                                         <span class="media-icon ion-ios-photos-outline">
-                                        ''' + data[1] + '''
+                                            ''' + data[1] + \
+                                            checkmark + '''
                                         </span>
                                     </span>
                                     <span class="info" style="overflow: unset; margin-right: 7px;">
@@ -141,6 +152,16 @@ def view_board(conn, name, post_number):
                     </div>
                 </div>''' + board_top
             for data in data_list:
+                curs.execute(db_change("select data from user_set where id = ? and name = 'acl'"), (articleUser,))
+                usermark = curs.fetchall()
+                if usermark:
+                    checkmark = '''
+                        <span class="info-badge" name="checkmark-circle">
+                            <img src="/board_views/img/checkmark.png" style="width: 13px; padding-bottom: 1px;">
+                        </span>
+                    '''
+                else:
+                    checkmark = ''
                 div += '''
                     <a class="board column" href="/b/'''+ data[6] +'''/'''+ data[0] +'''">
                         <div class="board-inner">
@@ -163,10 +184,8 @@ def view_board(conn, name, post_number):
                             <div class="board-bottom" style="display: flex;">
                                 <span class="article-author">
                                     <span class="article-info" style="display: flex;">
-                                        ''' + data[4] + '''
-                                        <span class="info-badge" name="checkmark-circle">
-                                            <img src="/board_views/img/checkmark.png" style="width: 13px; padding-bottom: 1px;">
-                                        </span>
+                                        ''' + data[1] + \
+                                        checkmark + '''
                                     </span>
                                 </span>
                                 <span class="article-time">
