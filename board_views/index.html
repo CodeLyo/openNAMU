@@ -1,164 +1,242 @@
 <!DOCTYPE html>
 <html>
-        <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>{{imp[0]}} - {{imp[1][0]}}</title>
-                <meta name="title" content="{{imp[0]}} - {{imp[1][0]}}">
-                <meta name="keywords" content="{{imp[0]}}">
-                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&amp;display=swap&amp;subset=korean" rel="stylesheet">
-                <link rel="stylesheet" href="/board_views/css/bootstrap.min.css?ver=4">
-                <link rel="stylesheet" href="/board_views/css/jquery-ui.min.css?ver=4">
-                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-                <link rel="stylesheet" href="/board_views/css/main.css?ver=19">
-                <link rel="stylesheet" href="/board_views/css/mobile_main.css?ver=14">
-                <link rel="stylesheet" href="/board_views/css/style.css?ver=7">
-	            <link rel="shortcut icon" href="/board_views/img/sona.png">
-                <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-                <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script>
-                <script type="text/javascript" src="/board_views/js/skin_set.js?ver=5"></script>
-                <script type="text/javascript" src="/board_views/js/jquery-3.6.0.min.js?ver=2"></script>
-                <script type="text/javascript" src="/board_views/js/bootstrap.min.js?ver=2"></script>
-                <script type="text/javascript" src="/board_views/js/jquery-ui.min.js?ver=2"></script>
-                <script type="text/javascript" src="/board_views/js/layout.js?ver=2"></script>
-                <script>main_load(); window.addEventListener('DOMContentLoaded', function() { skin_set(); });</script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{imp[0]}} - {{imp[1][0]}}</title>
+        <meta name="title" content="{{imp[0]}} - {{imp[1][0]}}" />
+        <meta name="keywords" content="{{imp[0]}}" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&amp;display=swap&amp;subset=korean"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="/board_views/css/bootstrap.min.css?ver=4"
+        />
+        <link
+            rel="stylesheet"
+            href="/board_views/css/jquery-ui.min.css?ver=4"
+        />
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <link rel="stylesheet" href="/board_views/css/main.css?ver=19" />
+        <link rel="stylesheet" href="/board_views/css/mobile_main.css?ver=14" />
+        <link rel="stylesheet" href="/board_views/css/style.css?ver=7" />
+        <link rel="shortcut icon" href="/board_views/img/sona.png" />
+        <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script>
+        <script
+            type="text/javascript"
+            src="/board_views/js/skin_set.js?ver=5"
+        ></script>
+        <script
+            type="text/javascript"
+            src="/board_views/js/jquery-3.6.0.min.js?ver=2"
+        ></script>
+        <script
+            type="text/javascript"
+            src="/board_views/js/bootstrap.min.js?ver=2"
+        ></script>
+        <script
+            type="text/javascript"
+            src="/board_views/js/jquery-ui.min.js?ver=2"
+        ></script>
+        <script
+            type="text/javascript"
+            src="/board_views/js/layout.js?ver=2"
+        ></script>
+        <script>
+            main_load();
+            window.addEventListener("DOMContentLoaded", function () {
+                skin_set();
+            });
+        </script>
 
-                <link rel="shortcut icon" href="/board_views/img/favicon.png?ver=2">
+        <link rel="shortcut icon" href="/board_views/img/favicon.png?ver=2" />
 
-                {{imp[3][3]|safe}}
-                {{imp[1][5]|safe}}
-                {{imp[2][3]|safe}}
-        </head>
-        <body class="sonagi">
-                <div class="nav-wrapper">
-                    <nav class="navbar navbar-dark">
-                        <a class="navbar-brand" href="/b/main">
-                            <img src="/board_views/img/sonasona.png" style="width:90px;height: 25px;margin-bottom: 5px;">
-                        </a>
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/b/wiki"><span class="fa fa-comments"></span><span class="hide-title">위키게시판</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/b/creative"><span class="fa fa-feather"></span><span class="hide-title">창작게시판</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/b/talk"><span class="fa fa-feather"></span><span class="hide-title">자유게시판</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/"><span class="fa fa-bookmark"></span><span class="hide-title">위키로</span></a>
-                            </li>
-                            {% if imp[2][2] == 0 %}
-                                <li class="nav-item">
-                                    <a class="nav-link nav-link-name" href="/user" title="{{imp[2][5]}}"><span>내 프로필</span></a>
-                                </li>
-                            {% else %}
-                                <li class="nav-item">
-                                    <a class="nav-link nav-link-name" href="/user" title="{{imp[2][5]}}"><span>{{imp[2][5]}}님</span></a>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                </div>
-                <div class="scroll-buttons">
-                    <a class="scroll-toc" href="#toc"><i class="fa fa-list-alt" aria-hidden="true"></i></a>
-                    <a class="scroll-button" href="#" id="left"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
-                    <a class="scroll-bottom" href="#powered" id="right"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
-                </div>
-                <div class="content-wrapper">  
-                    <div class="container-fluid sonagi-content">
-                        <div class="content-coler">
-                            {% if imp[2][12] != 0 and imp[2][12] == 'w' %}
-                                <form method="post" action="/search" id="searchform" class="form-inline">
-                                    <div class="search_box">
-                                        <input type="search" name="search" placeholder="{{'search'|load_lang}}" accesskey="f" class="form-control" id="searchInput" autocomplete="off">
-                                        <button formaction="/goto" name="go" value="view" id="searchGoButton" class="btn btn-secondary">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            {% endif %}
-                            <div class="sonagi-content-header">
-                                <!--{% if not menu == 0 %}
-                                    <div class="content-tools">
-                                        <div class="btn-group" role="group" aria-label="content-tools">
-                                            {% for sub_d in menu %}
-                                                {% if loop.index > 5 %}
-                                                    {% if loop.index == 6 %}
-                                                        <button type="button" class="btn btn-secondary tools-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                            <span class="caret"></span>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                                        {% set i = 0 %}
-                                                    {% endif %}
-                                                    <a class="dropdown-item" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
-                                                {% else %}
-                                                    {% if sub_d|length > 2 and sub_d[2] == 1 %}
-                                                        <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}" id="topic_color">{{sub_d[1]}}</a>
-                                                    {% else %}
-                                                        <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
-                                                    {% endif %}
-                                                {% endif %}
-                                                {% if not menu[loop.index] and loop.index > 5 %}
-                                                    </div>
-                                                {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                        <p style="text-align: right;">
-                                            {% if imp[3][1] != 0 %}
-                                                {{'last_edit_time'|load_lang}} : {{imp[3][1]}}
-                                                <br>
-                                            {% endif %}
-                                        </p>
-                                    </div>
-                                {% endif %}-->
-                                {% if request.path == '/b/main' %}
-                                {% else %}
-                                    <div class="title">
-                                        <h1 id="main_title">
-                                            {{imp[0]}}
-                                                {% if imp[3][0] != 0 %}
-                                                <sub>{{imp[3][0]}}</sub>
-                                            {% endif %}
-                                        </h1>
-                                    </div>
-                                {% endif %}
-                            </div>
-                                {% if request.path == '/recent_changes' %}
-			<div style="text-align: center;">
-			    <img src="/views/main_css/banner3.png" style="min-width: 50%;">
-			</div>
-                                {% endif %}
-                                {% if request.path == '/topic/*' %}
-			<div style="display:inline-block; width:100%; padding:5px 10px; margin:3px; border:2px solid #ffffff; border-radius:10px; background-color:#ffffff ; align: center;"><div style="display: inline; padding: 1px 3px 3px 4px; border-radius: 7px; background: #3aad92; font-size: 1.0em"><span style="color: #fff">공지</span></div> 현재 토론 버그로 인해 DB에서 일일이 토론을 승인해야 보입니다. 토론을 발제할 때 참고 부탁드립니다.</div>
-                                {% endif %}
-                            <div class="sonagi-content-main wiki-article">
-                                {% if request.path == '/w/소나위키:대문' %}
-                                {% endif %}
-                                {% if request.path == '/License' %}
-                                    <h3><a href="https://github.com/Team-YuJa/sonagi/tree/main">sonagi</a> skin</h3>
-                                    <li><a href="https://librewiki.net/">Liberty</a> base</li>
-                                    <li><a href="https://sona.wiki/">YuJa</a>(frontend)</li>
-                                    <li>ver : 06 </li>
-                                    <br>
-                                    <li>리버티 스킨( GPL-3.0 license ) 기반으로 배포된 소스코드 외 다른 소스코드 부분은 BSD-3-Clause license로 배포됩니다.</li>
-                                {% endif %}
-                                {{data|safe}}
-                            </div>
+        {{imp[3][3]|safe}} {{imp[1][5]|safe}} {{imp[2][3]|safe}}
+    </head>
+    <body class="sonagi">
+        <div class="nav-wrapper">
+            <nav class="navbar navbar-dark">
+                <a class="navbar-brand" href="/b/main">
+                    <img
+                        src="/board_views/img/sonasona.png"
+                        style="width: 90px; height: 25px; margin-bottom: 5px"
+                    />
+                </a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/b/wiki"
+                            ><span class="fa fa-comments"></span
+                            ><span class="hide-title">위키게시판</span></a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/b/creative"
+                            ><span class="fa fa-feather"></span
+                            ><span class="hide-title">창작게시판</span></a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/b/talk"
+                            ><span class="fa fa-feather"></span
+                            ><span class="hide-title">자유게시판</span></a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"
+                            ><span class="fa fa-bookmark"></span
+                            ><span class="hide-title">위키로</span></a
+                        >
+                    </li>
+                    {% if imp[2][2] == 0 %}
+                    <li class="nav-item">
+                        <a
+                            class="nav-link nav-link-name"
+                            href="/user"
+                            title="{{imp[2][5]}}"
+                            ><span>내 프로필</span></a
+                        >
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a
+                            class="nav-link nav-link-name"
+                            href="/user"
+                            title="{{imp[2][5]}}"
+                            ><span>{{imp[2][5]}}님</span></a
+                        >
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        <div class="scroll-buttons">
+            <a class="scroll-toc" href="#toc"
+                ><i class="fa fa-list-alt" aria-hidden="true"></i
+            ></a>
+            <a class="scroll-button" href="#" id="left"
+                ><i class="fa fa-arrow-up" aria-hidden="true"></i
+            ></a>
+            <a class="scroll-bottom" href="#powered" id="right"
+                ><i class="fa fa-arrow-down" aria-hidden="true"></i
+            ></a>
+        </div>
+        <div class="content-wrapper">
+            <div class="container-fluid sonagi-content">
+                <div class="content-coler">
+                    {% if imp[2][12] != 0 and imp[2][12] == 'w' %}
+                    <form
+                        method="post"
+                        action="/search"
+                        id="searchform"
+                        class="form-inline"
+                    >
+                        <div class="search_box">
+                            <input
+                                type="search"
+                                name="search"
+                                placeholder="{{'search'|load_lang}}"
+                                accesskey="f"
+                                class="form-control"
+                                id="searchInput"
+                                autocomplete="off"
+                            />
+                            <button
+                                formaction="/goto"
+                                name="go"
+                                value="view"
+                                id="searchGoButton"
+                                class="btn btn-secondary"
+                            >
+                                <i class="fa fa-search"></i>
+                            </button>
                         </div>
+                    </form>
+                    {% endif %}
+                    <div class="content-header">
+                        {% if request.path == '/b/main' %} {% else %}
+                        <div class="title">
+                            <h1 id="main_title">
+                                {{imp[0]}} {% if imp[3][0] != 0 %}
+                                <sub>{{imp[3][0]}}</sub>
+                                {% endif %}
+                            </h1>
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% if request.path == '/recent_changes' %}
+                    <div style="text-align: center">
+                        <img
+                            src="/views/main_css/banner3.png"
+                            style="min-width: 50%"
+                        />
+                    </div>
+                    {% endif %} {% if request.path == '/topic/*' %}
+                    <div
+                        style="
+                            display: inline-block;
+                            width: 100%;
+                            padding: 5px 10px;
+                            margin: 3px;
+                            border: 2px solid #ffffff;
+                            border-radius: 10px;
+                            background-color: #ffffff;
+                            align: center;
+                        "
+                    >
+                        <div
+                            style="
+                                display: inline;
+                                padding: 1px 3px 3px 4px;
+                                border-radius: 7px;
+                                background: #3aad92;
+                                font-size: 1em;
+                            "
+                        >
+                    </div>
+                    {% endif %}
+                    <div class="sonagi-content-main wiki-article">
+                        {% if request.path == '/w/FrontPage' %} {% endif %}
+                        {% if request.path == '/License' %}
+                        <li>
+                            <a href="https://librewiki.net/">Liberty</a> base
+                        </li>
+                        <br />
+                        <li>
+                        {% endif %} {{data|safe}}
                     </div>
                 </div>
-                <div class="footer">
-                    <div class="sonagi-footer" id="bottom">
-                        <p>sona.wiki | Operated by YuJa | <a href="/License">License</a></p>
-                        <p>본 위키는 {{imp[1][1]|safe}} 라이선스를 사용합니다.</p>
-                        <div id="powered">
-                            <a href="https://github.com/2DU/openNAMU"><img src="/views/main_css/file/s_logo.png" width="100px"></a>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="sonagi-footer" id="bottom">
+                <p>
+                    {{imp[1][0]}} | Operated by CodeLyo |
+                    <a href="/License">License</a>
+                </p>
+                <p>본 위키는 {{imp[1][1]|safe}} 라이선스를 사용합니다.</p>
+                <div id="powered">
+                    <a href="https://github.com/2DU/openNAMU"
+                        ><img
+                            src="/views/main_css/file/s_logo.png"
+                            width="100px"
+                    /></a>
                 </div>
-        </body>
+            </div>
+        </div>
+    </body>
 </html>

@@ -14,12 +14,13 @@ li {
     height: 34px;
 }
 
-sub, sup {
+sub,
+sup {
     line-height: 1.6rem;
 }
 
 #inside {
-    color: green;
+    color: black;
 }
 
 .hljs {
@@ -35,7 +36,7 @@ select {
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
 }
 
 input {
@@ -74,12 +75,13 @@ a.navbar-brand {
     margin-right: 20px;
 }
 
-img, iframe {
+img,
+iframe {
     max-width: 100%;
 }
 
 blockquote {
-    border-left: 5px solid #4188F1;
+    border-left: 5px solid #4188f1;
 }
 
 td {
@@ -104,14 +106,18 @@ table {
     font-size: 18px;
 }
 
-s, strike, del {
-    color:gray;
+s,
+strike,
+del {
+    color: gray;
 }
 
-s:hover, strike:hover, del:hover {
-    color:#666;
-    background-color:#eee;
-    text-decoration:none;
+s:hover,
+strike:hover,
+del:hover {
+    color: #666;
+    background-color: #eee;
+    text-decoration: none;
 }
 
 div.scroll-buttons a {
@@ -123,7 +129,7 @@ div.scroll-buttons a {
     border-left: 0;
     text-decoration: none;
     text-align: center;
-    background: rgba(26,26,26,0.9);
+    background: rgba(26, 26, 26, 0.9);
     border-bottom: 0;
     color: white;
 }
@@ -171,7 +177,12 @@ textarea {
     font-family: FontAwesome;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 10px;
     margin-top: 10px;
     padding-bottom: 5px;
@@ -210,7 +221,7 @@ button#save {
 
 button#save:hover {
     background-color: #025aa5;
-    border-color:#025aa5;
+    border-color: #025aa5;
 }
 
 button#preview {
@@ -246,11 +257,13 @@ button#come:hover {
     margin-right: -8px;
 }
 
-.navbar-fixed-bottom, .navbar-fixed-top {
+.navbar-fixed-bottom,
+.navbar-fixed-top {
     position: absolute;
 }
 
-#cate, #redirect {
+#cate,
+#redirect {
     border: 1px solid #e1e8ed;
     padding: 0.4rem;
     padding-left: 1rem;
@@ -276,41 +289,91 @@ ul#live-recent-list li {
     border-bottom: 4px solid #236758;
 }
 
-.sonagi .content-wrapper .sonagi-sidebar .sonagi-right .live-recent .live-recent-header .nav .nav-item {
+.sonagi
+    .content-wrapper
+    .sonagi-sidebar
+    .sonagi-right
+    .live-recent
+    .live-recent-header
+    .nav
+    .nav-item {
     width: 15.5rem;
 
     border-top-left-radius: 0.35rem;
     border-top-right-radius: 0;
 }
 
-.sonagi .content-wrapper .sonagi-sidebar .sonagi-right .live-recent .live-recent-header .nav .nav-item .nav-link.active::before, .Liberty .content-wrapper .sonagi-sidebar .sonagi-right .live-recent .live-recent-header .nav .nav-item .nav-link:hover::before, .Liberty .content-wrapper .sonagi-sidebar .sonagi-right .live-recent .live-recent-header .nav .nav-item .nav-link:focus::before, .Liberty .content-wrapper .sonagi-sidebar .sonagi-right .live-recent .live-recent-header .nav .nav-item .nav-link:active::before {
+.sonagi
+    .content-wrapper
+    .sonagi-sidebar
+    .sonagi-right
+    .live-recent
+    .live-recent-header
+    .nav
+    .nav-item
+    .nav-link.active::before,
+.Liberty
+    .content-wrapper
+    .sonagi-sidebar
+    .sonagi-right
+    .live-recent
+    .live-recent-header
+    .nav
+    .nav-item
+    .nav-link:hover::before,
+.Liberty
+    .content-wrapper
+    .sonagi-sidebar
+    .sonagi-right
+    .live-recent
+    .live-recent-header
+    .nav
+    .nav-item
+    .nav-link:focus::before,
+.Liberty
+    .content-wrapper
+    .sonagi-sidebar
+    .sonagi-right
+    .live-recent
+    .live-recent-header
+    .nav
+    .nav-item
+    .nav-link:active::before {
     width: 15rem;
 }
 
-.sonagi .content-wrapper .sonagi-sidebar .sonagi-right .live-recent .live-recent-header .nav .nav-item + .nav-item {
+.sonagi
+    .content-wrapper
+    .sonagi-sidebar
+    .sonagi-right
+    .live-recent
+    .live-recent-header
+    .nav
+    .nav-item
+    + .nav-item {
     margin-left: 0;
 
     border-left: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0.35rem;
-} 
-
+}
 
 /* 커피 */
-.coffee_cup{
+.coffee_cup {
     width: 20px;
     height: 24px;
-    border: 1px rgba(1,1,1,1) solid;
+    border: 1px rgba(1, 1, 1, 1) solid;
     border-radius: 0px 0px 5px 5px;
     margin: 10px;
     position: absolute;
     top: 169px;
 }
-.coffee_cup:after, .coffee_cup:before{
+.coffee_cup:after,
+.coffee_cup:before {
     position: absolute;
     content: "";
 }
-.coffee_cup:after{
+.coffee_cup:after {
     width: 5px;
     height: 12px;
     border: 1px #000 solid;
@@ -318,33 +381,43 @@ ul#live-recent-list li {
     border-radius: 0px 20px 20px 0px;
     left: 20px;
 }
-.coffee_cup:before{
+.coffee_cup:before {
     width: 1px;
     height: 6px;
-    background-color: rgba(1,1,1,1);
+    background-color: rgba(1, 1, 1, 1);
     top: -10px;
     left: 4px;
-    box-shadow: 5px 0px 0px 0px rgba(1,1,1,1),
-                5px -5px 0px 0px rgba(1,1,1,1),
-                10px 0px 0px 0px rgba(1,1,1,1);
+    box-shadow: 5px 0px 0px 0px rgba(1, 1, 1, 1),
+        5px -5px 0px 0px rgba(1, 1, 1, 1), 10px 0px 0px 0px rgba(1, 1, 1, 1);
     -webkit-animation: steam 1s linear infinite alternate;
-       -moz-animation: steam 1s linear infinite alternate;
-            animation: steam 1s linear infinite alternate;
+    -moz-animation: steam 1s linear infinite alternate;
+    animation: steam 1s linear infinite alternate;
 }
 
-@-webkit-keyframes steam{
-    0%{height: 0px;}
-    100%{height: 6px;}            
+@-webkit-keyframes steam {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 6px;
+    }
 }
-@-moz-keyframes steam{
-    0%{height: 0px}
-    100%{height: 6px;}            
+@-moz-keyframes steam {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 6px;
+    }
 }
-@keyframes steam{
-    0%{height: 0px}
-    100%{height: 6px;}            
+@keyframes steam {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 6px;
+    }
 }
-
 
 .live-recent {
     border: 5px solid #236758;
